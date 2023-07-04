@@ -1,7 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./screens/home";
+import AppLayout from "./components/AppLayout";
+import HomeScreen from "./screens/Home";
 
 const Stack = createNativeStackNavigator();
 
@@ -9,6 +10,11 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="AppLayout"
+          component={AppLayout}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -18,4 +24,5 @@ const App: React.FC = () => {
     </NavigationContainer>
   );
 };
+
 export default App;
