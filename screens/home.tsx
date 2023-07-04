@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import styles from "../components/styles";
+import styles from "../components/Styles";
 
 const HomeScreen: React.FC = () => {
   return (
