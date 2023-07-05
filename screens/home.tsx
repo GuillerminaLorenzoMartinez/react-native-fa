@@ -1,12 +1,15 @@
 import React from "react";
 import { View, Text } from "react-native";
-import styles from "../components/styles";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const HomeScreen: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to the Home Screen!</Text>
-      <Text style={styles.subtitle}>Enjoy exploring the app!</Text>
+    <View>
+      <Header />
+      <Text>Welcome to the Home Screen!</Text>
+      <Text>Enjoy exploring the app!</Text>
+      <Footer />
     </View>
   );
 };
