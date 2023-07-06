@@ -27,8 +27,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "flex-start",
-    paddingLeft: 10,
+    alignItems: "center",
+
+    marginTop: -290,
+    marginBottom: -320,
   },
 
   logo: {
