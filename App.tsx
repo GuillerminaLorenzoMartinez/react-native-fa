@@ -18,7 +18,7 @@ const App: React.FC = () => {
           options={{ headerShown: false }}
         />
         <Tab.Screen
-          name="AwardsAndOutputs"
+          name="Awards and Outputs"
           component={AwardsAndOutputsScreen}
           options={{ headerShown: false }}
         />
