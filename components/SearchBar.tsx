@@ -39,7 +39,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    marginTop: 50,
     backgroundColor: "#193E72",
   },
   inputContainer: {
