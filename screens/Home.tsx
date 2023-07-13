@@ -3,7 +3,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomeScreen from "./HomeScreen";
-import AwardDetailScreen from "./AwardDetail";
+import AwardDetailScreen from "./AwardDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
