@@ -36,7 +36,7 @@ const HomeScreen: React.FC = () => {
       <ScrollView>
         <View>
           <SearchBar onSearch={handleSearch} />
-          {awardDetails.length > 0 && (
+          {awardDetails && (
             <View>
               <Text style={styles.title}>Latest Awards</Text>
               <View>

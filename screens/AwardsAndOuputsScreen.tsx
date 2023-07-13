@@ -37,7 +37,7 @@ const AwardsAndOutputsScreen: React.FC = () => {
         <View>
           <ShortSearchBar onSearch={handleSearch} />
           <View>
-            {awardDetails.length > 0 && (
+            {awardDetails && (
               <View>
                 <Text style={styles.subtitle}>Awards</Text>
                 {awardDetails.map((award) => (
