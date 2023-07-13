@@ -1,100 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
-import SearchBar from "../components/SearchBar";
-import { getAwardsDetails } from "../utils/getAwardsDetails";
-import { fetchData } from "../utils/fetchLastSix";
+import React from "react";
 
-const HomeScreen: React.FC = () => {
-  const [data, setData] = useState<any>(null);
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-  const handleSearch = () => {
-    console.log("Search clicked");
-  };
+import HomeScreen from "./HomeScreen";
+import AwardDetailScreen from "./AwardDetail";
 
-  useEffect(() => {
-    const usefetchData = async () => {
-      const data = await fetchData();
-      setData(data);
-    };
+const Stack = createNativeStackNavigator();
 
-    usefetchData();
-  }, []);
-
-  const awardDetails = data ? getAwardsDetails(data) : [];
-
+function Home() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View>
-          <SearchBar onSearch={handleSearch} />
-          {awardDetails.length > 0 && (
-            <View>
-              <Text style={styles.title}>Latest Awards</Text>
-              <View>
-                {awardDetails.map((award) => (
-                  <View key={award.id}>
-                    <Text style={styles.subtitle}>{award.title}</Text>
-                    <Text style={styles.text}>{award.type} Award</Text>
-                    <Text style={styles.text}>
-                      Start Date:
-                      <Text style={styles.boldText}>{award.startDate}</Text>
-                    </Text>
-                    <Text style={styles.text}>
-                      Contracting Organisation:
-                      <Text style={styles.boldText}>
-                        {award.contractingOrg}
-                      </Text>
-                    </Text>
-                    <Text style={styles.text}>
-                      Chief Investigator:
-                      <Text style={styles.boldText}>
-                        {award.investigatorName}
-                      </Text>
-                    </Text>
-                  </View>
-                ))}
-              </View>
-            </View>
-          )}
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Stack.Navigator initialRouteName="HomeScreen">
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AwardDetailScreen"
+        component={AwardDetailScreen}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
-};
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 26,
-    fontWeight: "bold",
-    color: "black",
-    margin: 20,
-    textAlign: "left",
-  },
-  subtitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#193E72",
-    margin: 20,
-    textAlign: "left",
-  },
-  boldText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "black",
-    marginHorizontal: 20,
-    marginVertical: 10,
-    textAlign: "left",
-  },
-  text: {
-    fontSize: 20,
-    color: "black",
-    marginHorizontal: 20,
-    marginVertical: 10,
-    textAlign: "left",
-  },
-});
-
-export default HomeScreen;
+export default Home;
