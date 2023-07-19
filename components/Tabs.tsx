@@ -3,7 +3,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Home from "../screens/Home";
-import AwardsAndOutputsScreen from "../screens/AwardsAndOutputs";
+import AwardsAndOutputs from "../screens/AwardsAndOutputs";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +17,7 @@ function Tabs() {
       />
       <Tab.Screen
         name="Awards and Outputs"
-        component={AwardsAndOutputsScreen}
+        component={AwardsAndOutputs}
         options={{ headerShown: false }}
       />
     </Tab.Navigator>
