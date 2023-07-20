@@ -4,9 +4,8 @@ import Logo from "./components/Logo";
 import NavBar from "./components/NavBar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Home from "./screens/Home";
-import AwardsAndOutputs from "./screens/AwardsAndOutputs";
-import { Header } from "react-native/Libraries/NewAppScreen";
+import Home from "./router/Home";
+import AwardsAndOutputs from "./router/AwardsAndOutputs";
 
 const Stack = createNativeStackNavigator();
 

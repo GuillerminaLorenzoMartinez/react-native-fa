@@ -12,7 +12,7 @@ import { getAwardsDetails } from "../utils/getAwardsDetails";
 import { fetchData } from "../utils/fetchLastSix";
 import { useNavigation } from "@react-navigation/native";
 
-const AwardsAndOutputsScreen: React.FC = () => {
+const AwardsAndOutputs: React.FC = () => {
   const navigation = useNavigation<any>();
   const [data, setData] = useState<any>(null);
 
@@ -43,7 +43,7 @@ const AwardsAndOutputsScreen: React.FC = () => {
                 {awardDetails.map((award) => (
                   <View key={award.id}>
                     <TouchableOpacity
-                      onPress={() => navigation.navigate("AwardDetailScreen")}
+                      onPress={() => navigation.navigate("AwardDetail")}
                     >
                       <Text style={styles.text}>• {award.title}</Text>
                     </TouchableOpacity>
@@ -56,27 +56,27 @@ const AwardsAndOutputsScreen: React.FC = () => {
             <Text style={styles.subtitle}>Outputs</Text>
             <View>
               <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetailScreen")}
+                onPress={() => navigation.navigate("OutputDetail")}
               >
                 <Text style={styles.text}>• Output name 1</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetailScreen")}
+                onPress={() => navigation.navigate("OutputDetail")}
               >
                 <Text style={styles.text}>• Output name 2</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetailScreen")}
+                onPress={() => navigation.navigate("OutputDetail")}
               >
                 <Text style={styles.text}>• Output name 3</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetailScreen")}
+                onPress={() => navigation.navigate("OutputDetail")}
               >
                 <Text style={styles.text}>• Output name 4</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetailScreen")}
+                onPress={() => navigation.navigate("OutputDetail")}
               >
                 <Text style={styles.text}>• Output name 5</Text>
               </TouchableOpacity>
@@ -123,4 +123,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AwardsAndOutputsScreen;
+export default AwardsAndOutputs;

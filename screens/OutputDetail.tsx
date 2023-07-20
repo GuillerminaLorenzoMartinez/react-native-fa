@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import ShortSearchBar from "../components/ShortSearchBar";
 
-const AwardDetailScreen: React.FC = () => {
+const OutputDetail: React.FC = () => {
   const handleSearch = () => {
     console.log("Search clicked");
   };
@@ -11,7 +11,7 @@ const AwardDetailScreen: React.FC = () => {
       <ScrollView>
         <ShortSearchBar onSearch={handleSearch} />
         <View>
-          <Text>Welcome to the Award</Text>
+          <Text>Welcome to the Output</Text>
           <Text>Enjoy exploring the app!</Text>
         </View>
       </ScrollView>
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AwardDetailScreen;
+export default OutputDetail;

@@ -2,8 +2,8 @@ import React from "react";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Home from "../screens/Home";
-import AwardsAndOutputs from "../screens/AwardsAndOutputs";
+import Home from "../router/Home";
+import AwardsAndOutputs from "../router/AwardsAndOutputs";
 
 const Tab = createBottomTabNavigator();
 

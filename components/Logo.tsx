@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
   const navigation = useNavigation<any>();
 
   const handleNavigateToHome = () => {
-    navigation.navigate("HomeScreen");
+    navigation.navigate("Home");
     console.log("Pressed");
   };
 
