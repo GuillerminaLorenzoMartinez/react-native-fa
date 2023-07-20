@@ -11,9 +11,14 @@ import { useNavigation } from "@react-navigation/native";
 const Logo: React.FC = () => {
   const navigation = useNavigation<any>();
 
+  const handleNavigateToHome = () => {
+    navigation.navigate("HomeScreen");
+    console.log("Pressed");
+  };
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+      <TouchableOpacity onPress={handleNavigateToHome}>
         <Image
           source={{
             uri: "https://www.nihr.ac.uk/layout/4.0/assets/logos/nihr-master-logo-325px.png",
@@ -31,11 +36,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-
-    marginTop: -290,
-    marginBottom: -320,
+    marginTop: -270,
+    marginBottom: -300,
   },
-
   logo: {
     width: 350,
     height: 50,
