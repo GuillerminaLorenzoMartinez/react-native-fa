@@ -8,7 +8,7 @@ import OutputDetailScreen from "./OutputDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
-function Home() {
+function AwardsAndOutputs() {
   return (
     <Stack.Navigator initialRouteName="AwardsAndOutputsScreen">
       <Stack.Screen
@@ -30,4 +30,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AwardsAndOutputs;
