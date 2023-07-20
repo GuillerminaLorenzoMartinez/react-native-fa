@@ -14,7 +14,6 @@ const App: React.FC = () => {
     <NavigationContainer>
       <Logo />
       <NavBar />
-      {/* <Header /> */}
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
