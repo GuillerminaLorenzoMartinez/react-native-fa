@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AwardsAndOutputsScreen from "../screens/AwardsAndOuputs";
 import AwardDetail from "../screens/AwardDetail";
 import OutputDetail from "../screens/OutputDetail";
+import { ParamList } from "../utils/types";
 
 const Stack = createNativeStackNavigator();
 

@@ -4,8 +4,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomeScreen from "../screens/Home";
 import AwardDetail from "../screens/AwardDetail";
+import { ParamList } from "../utils/types";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<ParamList>();
 
 function Home() {
   return (

@@ -43,7 +43,12 @@ const AwardsAndOutputs: React.FC = () => {
                 {awardDetails.map((award) => (
                   <View key={award.id}>
                     <TouchableOpacity
-                      onPress={() => navigation.navigate("AwardDetail")}
+                      onPress={() =>
+                        navigation.navigate("AwardDetail", {
+                          id: award.id,
+                          title: award.title,
+                        })
+                      }
                     >
                       <Text style={styles.text}>• {award.title}</Text>
                     </TouchableOpacity>
