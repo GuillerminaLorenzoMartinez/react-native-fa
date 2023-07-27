@@ -2,13 +2,13 @@ import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import AwardsAndOutputsScreen from "./AwardsAndOuputsScreen";
-import AwardDetailScreen from "./AwardDetailScreen";
-import OutputDetailScreen from "./OutputDetailScreen";
+import AwardsAndOutputsScreen from "../screens/AwardsAndOuputs";
+import AwardDetail from "../screens/AwardDetail";
+import OutputDetail from "../screens/OutputDetail";
 
 const Stack = createNativeStackNavigator();
 
-function Home() {
+function AwardsAndOutputs() {
   return (
     <Stack.Navigator initialRouteName="AwardsAndOutputsScreen">
       <Stack.Screen
@@ -17,17 +17,17 @@ function Home() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="AwardDetailScreen"
-        component={AwardDetailScreen}
+        name="AwardDetail"
+        component={AwardDetail}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="OutputDetailScreen"
-        component={OutputDetailScreen}
+        name="OutputDetail"
+        component={OutputDetail}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
 }
 
-export default Home;
+export default AwardsAndOutputs;

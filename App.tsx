@@ -1,16 +1,31 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Tabs from "./components/Tabs";
 import Logo from "./components/Logo";
+import NavBar from "./components/NavBar";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const Tab = createBottomTabNavigator();
+import Home from "./router/Home";
+import AwardsAndOutputs from "./router/AwardsAndOutputs";
+
+const Stack = createNativeStackNavigator();
 
 const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Logo />
-      <Tabs />
+      <NavBar />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AwardsAndOutputs"
+          component={AwardsAndOutputs}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
