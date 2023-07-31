@@ -8,13 +8,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 import ShortSearchBar from "../components/ShortSearchBar";
-import { getAwardsDetails } from "../utils/getAwardsDetails";
+import { AwardDetails, getAwardsDetails } from "../utils/getAwardsDetails";
 import { fetchData } from "../utils/fetchLastSix";
 import { useNavigation } from "@react-navigation/native";
+import { getOutputsDetails, OutputDetails } from "../utils/getOutputsDetails";
 
 const AwardsAndOutputs: React.FC = () => {
   const navigation = useNavigation<any>();
-  const [data, setData] = useState<any>(null);
+  const [awardData, setAwardData] = useState<any>(null);
+  const [outputData, setOutputData] = useState<OutputDetails[]>([]);
 
   const handleSearch = () => {
     console.log("Search clicked");
@@ -22,14 +24,19 @@ const AwardsAndOutputs: React.FC = () => {
 
   useEffect(() => {
     const usefetchData = async () => {
-      const data = await fetchData();
-      setData(data);
+      const awards = await fetchData();
+      setAwardData(awards);
+
+      const outputs = await getOutputsDetails();
+      setOutputData(outputs);
     };
 
     usefetchData();
   }, []);
 
-  const awardDetails = data ? getAwardsDetails(data) : [];
+  const awardDetails: AwardDetails[] = awardData
+    ? getAwardsDetails(awardData)
+    : [];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -60,31 +67,20 @@ const AwardsAndOutputs: React.FC = () => {
           <View>
             <Text style={styles.subtitle}>Outputs</Text>
             <View>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetail")}
-              >
-                <Text style={styles.text}>• Output name 1</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetail")}
-              >
-                <Text style={styles.text}>• Output name 2</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetail")}
-              >
-                <Text style={styles.text}>• Output name 3</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetail")}
-              >
-                <Text style={styles.text}>• Output name 4</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("OutputDetail")}
-              >
-                <Text style={styles.text}>• Output name 5</Text>
-              </TouchableOpacity>
+              {outputData.map((output) => (
+                <View key={output.id}>
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate("OutputDetail", {
+                        id: output.id,
+                        title: output.title,
+                      })
+                    }
+                  >
+                    <Text style={styles.text}>• {output.title}</Text>
+                  </TouchableOpacity>
+                </View>
+              ))}
             </View>
           </View>
         </View>

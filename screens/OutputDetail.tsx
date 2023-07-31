@@ -1,8 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import { useRoute } from "@react-navigation/native";
 import ShortSearchBar from "../components/ShortSearchBar";
+import { OutputDetailScreenRouteProp } from "../utils/types";
 
 const OutputDetail: React.FC = () => {
+  const route = useRoute<OutputDetailScreenRouteProp>();
+
+  const { id, title } = route.params;
+
   const handleSearch = () => {
     console.log("Search clicked");
   };
@@ -11,7 +17,8 @@ const OutputDetail: React.FC = () => {
       <ScrollView>
         <ShortSearchBar onSearch={handleSearch} />
         <View>
-          <Text>Welcome to the Output</Text>
+          <Text>{title}</Text>
+          <Text>Output ID: {id}</Text>
           <Text>Enjoy exploring the app!</Text>
         </View>
       </ScrollView>

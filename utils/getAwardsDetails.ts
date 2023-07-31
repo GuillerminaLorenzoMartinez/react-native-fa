@@ -1,4 +1,4 @@
-interface AwardDetails {
+export interface AwardDetails {
   id: string;
   title: string;
   type: string;
