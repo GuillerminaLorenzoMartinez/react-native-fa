@@ -45,8 +45,8 @@ const Home: React.FC = () => {
                     <TouchableOpacity
                       onPress={() =>
                         navigation.navigate("AwardDetail", {
-                          id: award.id, // Pass the award ID as a parameter
-                          title: award.title, // Pass the award title as a parameter
+                          id: award.id,
+                          title: award.title,
                         })
                       }
                     >
