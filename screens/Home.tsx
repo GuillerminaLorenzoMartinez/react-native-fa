@@ -8,17 +8,13 @@ import {
   TouchableOpacity,
 } from "react-native";
 import SearchBar from "../components/SearchBar";
-import { getAwardsDetails } from "../utils/getAwardsDetails";
+import { AwardDetails, getAwardsDetails } from "../utils/getAwardsDetails";
 import { fetchData } from "../utils/fetchLastSix";
 import { useNavigation } from "@react-navigation/native";
 
 const Home: React.FC = () => {
   const navigation = useNavigation<any>();
   const [data, setData] = useState<any>(null);
-
-  const handleSearch = () => {
-    console.log("Search clicked");
-  };
 
   useEffect(() => {
     const usefetchData = async () => {
@@ -29,13 +25,13 @@ const Home: React.FC = () => {
     usefetchData();
   }, []);
 
-  const awardDetails = data ? getAwardsDetails(data) : [];
+  const awardDetails: AwardDetails[] = data ? getAwardsDetails(data) : [];
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View>
-          <SearchBar onSearch={handleSearch} />
+          <SearchBar />
           {awardDetails && (
             <View>
               <Text style={styles.title}>Latest Awards</Text>

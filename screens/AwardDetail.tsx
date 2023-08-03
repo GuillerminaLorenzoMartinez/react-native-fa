@@ -9,13 +9,10 @@ const AwardDetail: React.FC = () => {
 
   const { id, title } = route.params;
 
-  const handleSearch = () => {
-    console.log("Search clicked");
-  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <ShortSearchBar onSearch={handleSearch} />
+        <ShortSearchBar />
         <View>
           <Text>{title}</Text>
           <Text>Award ID: {id}</Text>

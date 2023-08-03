@@ -9,13 +9,10 @@ const OutputDetail: React.FC = () => {
 
   const { id, title } = route.params;
 
-  const handleSearch = () => {
-    console.log("Search clicked");
-  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <ShortSearchBar onSearch={handleSearch} />
+        <ShortSearchBar />
         <View>
           <Text>{title}</Text>
           <Text>Output ID: {id}</Text>

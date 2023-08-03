@@ -18,10 +18,6 @@ const AwardsAndOutputs: React.FC = () => {
   const [awardData, setAwardData] = useState<any>(null);
   const [outputData, setOutputData] = useState<OutputDetails[]>([]);
 
-  const handleSearch = () => {
-    console.log("Search clicked");
-  };
-
   useEffect(() => {
     const usefetchData = async () => {
       const awards = await fetchData();
@@ -42,7 +38,7 @@ const AwardsAndOutputs: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View>
-          <ShortSearchBar onSearch={handleSearch} />
+          <ShortSearchBar />
           <View>
             {awardDetails && (
               <View>

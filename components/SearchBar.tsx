@@ -8,11 +8,7 @@ import {
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-interface SearchBarProps {
-  onSearch: () => void;
-}
-
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>NIHR Funding and Awards</Text>
@@ -28,7 +24,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         >
           <FontAwesome name="close" size={25} color="grey" />
         </TouchableOpacity>
-        <TouchableOpacity onPress={onSearch} style={styles.searchButton}>
+        <TouchableOpacity
+          onPress={() => console.log("Search clicked")}
+          style={styles.searchButton}
+        >
           <FontAwesome name="search" size={25} color="black" />
         </TouchableOpacity>
       </View>
