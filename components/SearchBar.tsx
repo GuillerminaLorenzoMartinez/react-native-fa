@@ -17,16 +17,18 @@ const SearchBar: React.FC = () => {
         and care research, including expenditure and research findings
       </Text>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder="Search" />
+        <TextInput style={styles.input} placeholder="Search" testID="input" />
         <TouchableOpacity
           onPress={() => console.log("Close clicked")}
           style={styles.closeButton}
+          testID="closeButton"
         >
           <FontAwesome name="close" size={25} color="grey" />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => console.log("Search clicked")}
           style={styles.searchButton}
+          testID="searchButton"
         >
           <FontAwesome name="search" size={25} color="black" />
         </TouchableOpacity>

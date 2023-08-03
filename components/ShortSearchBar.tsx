@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-const SearchBar: React.FC = () => {
+const ShortSearchBar: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -16,12 +16,14 @@ const SearchBar: React.FC = () => {
         <TouchableOpacity
           onPress={() => console.log("Close clicked")}
           style={styles.closeButton}
+          testID="closeButton"
         >
           <FontAwesome name="close" size={25} color="grey" />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => console.log("Search clicked")}
           style={styles.searchButton}
+          testID="searchButton"
         >
           <FontAwesome name="search" size={25} color="black" />
         </TouchableOpacity>
@@ -58,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SearchBar;
+export default ShortSearchBar;
